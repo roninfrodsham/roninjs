@@ -1,16 +1,9 @@
 import { motion } from 'framer-motion';
 
 function Navigation() {
-
-  const variants = {
-    visible: { opacity: 1 },
-    hidden: { opacity: 0 },
-  }
-
-
   return (
     <header>
-      <motion.h1 initial="hidden" animate="visible" variants={variants}>RONIN JS</motion.h1>
+      <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 0.6 }}>RONIN JS</motion.h1>
     </header>
   );
 }

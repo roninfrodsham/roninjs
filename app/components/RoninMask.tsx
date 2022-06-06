@@ -41,6 +41,7 @@ function RoninMask() {
     visible: {
       opacity: 1,
       transition: {
+        delay: 1,
         duration: 0.6,
         type: "tween",
         ease: "easeInOut",
@@ -62,9 +63,6 @@ function RoninMask() {
         stiffness: 160,
         damping: 12,
       },
-      default: {
-        duration: 0.5,
-      }
     },
   }
 

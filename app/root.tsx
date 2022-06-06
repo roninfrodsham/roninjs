@@ -7,7 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import { Navigation} from "~/components/Navigation";
+import { Navigation } from "~/components/Navigation";
 import stylesUrl from "~/styles/global.css";
 
 export let links: LinksFunction = () => {
