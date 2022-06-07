@@ -1,3 +1,4 @@
-.ronin-mask {
-  max-width: 20vw;
+.mask-container {
+  width: 20vw;
+  text-align: center;
 }

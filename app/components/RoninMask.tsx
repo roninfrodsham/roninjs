@@ -37,12 +37,14 @@ function RoninMask() {
   const hatVariants = {
     hidden: {
       opacity: 0,
+      y: 50,
     },
     visible: {
       opacity: 1,
+      y: 0,
       transition: {
-        delay: 1,
-        duration: 0.6,
+        delay: 1.3,
+        duration: 0.5,
         type: "tween",
         ease: "easeInOut",
         when: "beforeChildren",

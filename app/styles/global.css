@@ -1,4 +1,6 @@
 html { height: 100%; }
+* { box-sizing: border-box; }
+
 
 body {
   height: 100%;
@@ -6,22 +8,57 @@ body {
   padding: 0;
   background-color: #EEABCE;
   font-family: 'Sawarabi Mincho', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: #00582B;
+}
+
+header {
+  position: relative;
+  text-align: center;
 }
 
 h1 {
   margin: 0;
-  padding: 5px 20px;
+  padding: 5px 0;
   background-color: #00582B;
   color: #EEABCE;
   font-weight: normal;
   text-align: center;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+nav ul {
+  margin: 40px 20px;
+  padding: 0;
+}
+
+nav ul li {
+  margin-top: 20px;
+  display: block;
+}
+
+nav ul li a {
+  font-size: 1.2em;
+  color: #EEABCE;
+  padding: 10px 20px;
+  background-color: #00582B;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .container {
   height: 100%;
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 320px 1fr;
   grid-template-rows: 1fr;
 }
 
@@ -30,4 +67,24 @@ h1 {
   display: grid;
   align-items: center;
   justify-items: center;
+}
+
+.button {
+  background-color: #00582B;
+  color: #EEABCE;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.button--big {
+  width: 320px;
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.sticky-footer {
+  position: absolute;
+  bottom: 0;
 }
