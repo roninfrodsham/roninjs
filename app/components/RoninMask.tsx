@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 
 function RoninMask() {
   function HatTop() {
@@ -44,7 +44,7 @@ function RoninMask() {
       y: 0,
       transition: {
         delay: 1.3,
-        duration: 0.5,
+        duration: 0.6,
         type: "tween",
         ease: "easeInOut",
         when: "beforeChildren",
@@ -80,4 +80,4 @@ function RoninMask() {
   )
 }
 
-export { RoninMask };
+export { RoninMask }

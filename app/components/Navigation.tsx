@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from "@remix-run/react";
 
 function Navigation() {
-  const navigationItems: Array<any> = [
+  const navigationItems: Array<{ title: string, slug: string }> = [
     {
       title: "Simon",
       slug: "/simon",
@@ -18,6 +18,10 @@ function Navigation() {
     {
       title: "Synth",
       slug: "/synth",
+    },
+    {
+      title: "Balls",
+      slug: "/balls",
     }
   ];
 
@@ -25,10 +29,11 @@ function Navigation() {
     visible: { 
       opacity: 1,
       transition: {
+        duration: 0.5,
         when: "beforeChildren",
         staggerChildren: 0.1,
         type: "spring",
-        stiffness: 160,
+        stiffness: 130,
         damping: 15,
       },
     },
@@ -54,6 +59,7 @@ function Navigation() {
                   <MotionComponent 
                     to={item.slug} 
                     whileHover={{
+                      backgroundColor: "#09743E",
                       scale: 1.6,
                       transition: {
                         duration: 0.2,
@@ -61,16 +67,15 @@ function Navigation() {
                         stiffness: 300,
                         damping: 20,
                       }
-                  }}>
-                    {item.title}
-                  </MotionComponent>
+                    }}
+                  >{item.title}</MotionComponent>
                 </motion.li>
               )
             })
           ) : null }
         </motion.ul>
       </nav>
-      <motion.a href="#" className="button button--big sticky-footer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 0.6 }}>HIRE ME</motion.a>
+      <MotionComponent to="#" className="button button--big sticky-footer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 0.6 }}>Hire Me</MotionComponent>
     </header>
   );
 }
