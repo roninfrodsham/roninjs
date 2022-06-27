@@ -4,25 +4,17 @@ import { Link } from "@remix-run/react";
 function Navigation() {
   const navigationItems: Array<{ title: string, slug: string }> = [
     {
-      title: "Simon",
-      slug: "/simon",
-    },
-    {
-      title: "Kabuto",
-      slug: "/kabuto",
-    },
-    {
-      title: "Ghetto Blaster",
-      slug: "/blaster",
-    },
-    {
-      title: "Synth",
-      slug: "/synth",
+      title: "Memory Game",
+      slug: "/memory-game",
     },
     {
       title: "Balls",
       slug: "/balls",
-    }
+    },
+    {
+      title: "Kabuto Somen",
+      slug: "/kabuto-somen",
+    },
   ];
 
   const list = {
