@@ -36,11 +36,11 @@ export default function MemoryGame() {
     userPlay: false,
     userColours: [],
   }
-  const [greenSound, setGreenSound] = useState<HTMLAudioElement>()
-  const [redSound, setRedSound] = useState<HTMLAudioElement>()
-  const [yellowSound, setYellowSound] = useState<HTMLAudioElement>()
-  const [blueSound, setBlueSound] = useState<HTMLAudioElement>()
-  const [errorSound, setErrorSound] = useState<HTMLAudioElement>()
+  const [greenSound, setGreenSound] = useState<HTMLAudioElement | undefined>()
+  const [redSound, setRedSound] = useState<HTMLAudioElement | undefined>()
+  const [yellowSound, setYellowSound] = useState<HTMLAudioElement | undefined>()
+  const [blueSound, setBlueSound] = useState<HTMLAudioElement | undefined>()
+  const [errorSound, setErrorSound] = useState<HTMLAudioElement | undefined>()
   const [activeGame, setActiveGame] = useState<boolean>(false)
   const [gameState, setGameState] = useState<GameStateProps>(initialGameState)
   const [currentColour, setCurrentColour] = useState<string | null>(null)
