@@ -41,7 +41,7 @@ function Navigation() {
 
   return (
     <header>
-      <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 0.6 }}>RONIN JS</motion.h1>
+      <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 0.6 }}><Link to="/">RONIN JS</Link></motion.h1>
       <nav>
         <motion.ul initial="hidden" animate="visible" variants={list}>
           {navigationItems.length > 0 ? (
@@ -67,7 +67,7 @@ function Navigation() {
           ) : null }
         </motion.ul>
       </nav>
-      <MotionComponent to="#" className="button button--big sticky-footer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 0.6 }}>Hire Me</MotionComponent>
+      <MotionComponent to="mailto:jonnyfrodsham@googlemail.com" className="button button--big sticky-footer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 0.6 }}>Hire Me</MotionComponent>
     </header>
   );
 }
