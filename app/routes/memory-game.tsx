@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import type { LinksFunction } from "@remix-run/cloudflare";
+import type { LinksFunction } from "@remix-run/cloudflare"
+import { motion } from 'framer-motion'
 import { GameButton } from '~/components/simon/gameButton'
 import { StartButton } from '~/components/simon/startButton'
 import { getRandomInt, timeout } from "~/utils/misc"
@@ -36,11 +37,11 @@ export default function MemoryGame() {
     userPlay: false,
     userColours: [],
   }
-  const [greenSound, setGreenSound] = useState<HTMLAudioElement | undefined>()
-  const [redSound, setRedSound] = useState<HTMLAudioElement | undefined>()
-  const [yellowSound, setYellowSound] = useState<HTMLAudioElement | undefined>()
-  const [blueSound, setBlueSound] = useState<HTMLAudioElement | undefined>()
-  const [errorSound, setErrorSound] = useState<HTMLAudioElement | undefined>()
+  const [greenSound, setGreenSound] = useState<HTMLAudioElement>()
+  const [redSound, setRedSound] = useState<HTMLAudioElement>()
+  const [yellowSound, setYellowSound] = useState<HTMLAudioElement>()
+  const [blueSound, setBlueSound] = useState<HTMLAudioElement>()
+  const [errorSound, setErrorSound] = useState<HTMLAudioElement>()
   const [activeGame, setActiveGame] = useState<boolean>(false)
   const [gameState, setGameState] = useState<GameStateProps>(initialGameState)
   const [currentColour, setCurrentColour] = useState<string | null>(null)
@@ -163,49 +164,45 @@ export default function MemoryGame() {
   }
 
   return (
-    <div className="content">
-      <div className="center-content">
-        <div className="simon circle oh bGray">
-          <div className="buttonsContainer pa circle oh">
-            {colours &&
-              colours.map((colour) => (
-                <GameButton
-                  colour={colour}
-                  lightUp={currentColour === colour}
-                  onClick={gameButtonClickHandle}
-                  key={colour}
-                  active={gameState.userPlay}
-                />
-            ))}
-            <div className="divider pa hoz bGray shadow10"></div>
-            <div className="divider pa vert bGray shadow10"></div>
-            <div className="divider pa hoz bGray z10"></div>
-            <div className="divider pa vert bGray z10"></div>
+    <motion.div className="simon circle oh bGray" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}>
+      <div className="buttonsContainer pa circle oh">
+        {colours &&
+          colours.map((colour) => (
+            <GameButton
+              colour={colour}
+              lightUp={currentColour === colour}
+              onClick={gameButtonClickHandle}
+              key={colour}
+              active={gameState.userPlay}
+            />
+        ))}
+        <div className="divider pa hoz bGray shadow10"></div>
+        <div className="divider pa vert bGray shadow10"></div>
+        <div className="divider pa hoz bGray z10"></div>
+        <div className="divider pa vert bGray z10"></div>
+      </div>
+      <div className="centreContainer cc pa circle bGray shadow10">
+        <div className="centreSpacer circle oh">
+          <div className="speakerContainer pa circle oh">
+            <div className="speakerClip">
+              <div className="speaker"></div>
+            </div>
           </div>
-          <div className="centreContainer cc pa circle bGray shadow10">
-            <div className="centreSpacer circle oh">
-              <div className="speakerContainer pa circle oh">
-                <div className="speakerClip">
-                  <div className="speaker"></div>
-                </div>
-              </div>
-              <div className="controlsContainer pa circle oh">
-                <div className="controlsInner cc">
-                  <img src={logo} className="logo bGray" alt="Simon Logo" />
-                  <div className="controls cc">
-                    <div className="screenShadow cc">
-                      <div className="screen cc">
-                        <input type="text" value={gameState.score} disabled />
-                      </div>
-                    </div>
-                    <StartButton onClick={startGame} activeGame={activeGame} />
+          <div className="controlsContainer pa circle oh">
+            <div className="controlsInner cc">
+              <img src={logo} className="logo bGray" alt="Simon Logo" />
+              <div className="controls cc">
+                <div className="screenShadow cc">
+                  <div className="screen cc">
+                    <input type="text" value={gameState.score} disabled />
                   </div>
                 </div>
+                <StartButton onClick={startGame} activeGame={activeGame} />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

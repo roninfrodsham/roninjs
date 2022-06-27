@@ -67,7 +67,7 @@ function Navigation() {
           ) : null }
         </motion.ul>
       </nav>
-      <motion.h2 className="button button--big sticky-footer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 0.6 }}><Link to="mailto:jonnyfrodsham@googlemail.com">Hire Me</Link></motion.h2>
+      <motion.h2 className="button button--big sticky-footer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 0.6 }}><Link to="/hire-me">Hire Me</Link></motion.h2>
     </header>
   );
 }

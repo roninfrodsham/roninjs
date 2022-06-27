@@ -26,7 +26,11 @@ export default function App() {
       <body>
         <div className="container">
           <Navigation />
-          <Outlet />
+          <div className="content">
+            <div className="center-content">
+              <Outlet />
+            </div>
+          </div>
         </div>
         <ScrollRestoration />
         <Scripts />
