@@ -3,13 +3,13 @@ import type { LinksFunction } from "@remix-run/cloudflare";
 import { GameButton } from '~/components/simon/gameButton'
 import { StartButton } from '~/components/simon/startButton'
 import { getRandomInt, timeout } from "~/utils/misc"
-import logo from '~/images/logo.svg'
 import stylesUrl from "~/styles/simon.css";
 import greenMp3 from "~/sounds/green.mp3"
 import redMp3 from "~/sounds/red.mp3"
 import yellowMp3 from "~/sounds/yellow.mp3"
 import blueMp3 from "~/sounds/blue.mp3"
 import errorMp3 from "~/sounds/error.mp3"
+import logo from '~/images/logo.svg'
 
 type GameStateProps = {
   simonMode: boolean,
