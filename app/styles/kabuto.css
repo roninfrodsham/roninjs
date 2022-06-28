@@ -1,0 +1,12 @@
+.kabuto {
+  height: 30vmin;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  padding: 10px 20px;
+  font-size: 21px;
+  font-family: 'Sawarabi Mincho', sans-serif;
+  cursor: pointer;
+}

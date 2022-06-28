@@ -23,8 +23,8 @@ type GameStateProps = {
 }
 
 export let links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: stylesUrl }];
-};
+  return [{ rel: "stylesheet", href: stylesUrl }]
+}
 
 export default function MemoryGame() {
   const colours: Array<string> = ["green", "red", "yellow", "blue"]

@@ -1,3 +1,4 @@
+import type { LinksFunction } from "@remix-run/cloudflare"
 import { motion } from 'framer-motion'
 import { RoninMask } from "~/components/RoninMask"
 import stylesUrl from "~/styles/index.css"
